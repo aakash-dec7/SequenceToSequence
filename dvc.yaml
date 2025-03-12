@@ -48,7 +48,5 @@ stages:
     deps:
       - src/seq2seq/component/s6_model_evaluation.py
       - artifacts/model
-    metrics:
-      - artifacts/evaluation/metrics.json
     outs:
       - artifacts/evaluation

@@ -1,0 +1,115 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/seq2seq/component/s1_data_ingestion.py
+    deps:
+    - path: src/seq2seq/component/s1_data_ingestion.py
+      hash: md5
+      md5: 4fb4319809042c7d62ebc73d3c557a62
+      size: 2435
+    outs:
+    - path: artifacts/data_ingestion
+      hash: md5
+      md5: 6d174d7c67baf16daa2bdc79bfc7b358.dir
+      size: 775265
+      nfiles: 1
+  data_validation:
+    cmd: python src/seq2seq/component/s2_data_validation.py
+    deps:
+    - path: artifacts/data_ingestion
+      hash: md5
+      md5: 6d174d7c67baf16daa2bdc79bfc7b358.dir
+      size: 775265
+      nfiles: 1
+    - path: src/seq2seq/component/s2_data_validation.py
+      hash: md5
+      md5: ea8c9decebc86d0db0c60e9434161fc8
+      size: 2797
+  data_preprocessing:
+    cmd: python src/seq2seq/component/s3_data_preprocessing.py
+    deps:
+    - path: artifacts/data_ingestion
+      hash: md5
+      md5: 6d174d7c67baf16daa2bdc79bfc7b358.dir
+      size: 775265
+      nfiles: 1
+    - path: src/seq2seq/component/s3_data_preprocessing.py
+      hash: md5
+      md5: eb189837579f515015fd15b521c56c93
+      size: 5741
+    outs:
+    - path: artifacts/data_preprocessing
+      hash: md5
+      md5: 84361377e0177ac5e8279f99278567d2.dir
+      size: 6614040
+      nfiles: 8
+  data_transformation:
+    cmd: python src/seq2seq/component/s4_data_transformation.py
+    deps:
+    - path: artifacts/data_preprocessing
+      hash: md5
+      md5: 84361377e0177ac5e8279f99278567d2.dir
+      size: 6614040
+      nfiles: 8
+    - path: src/seq2seq/component/s4_data_transformation.py
+      hash: md5
+      md5: c42f79c6f91d3834214bdc57060a71dc
+      size: 4526
+    outs:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e175e2c59413ff6a9db9d9f498c08cba.dir
+      size: 3514002
+      nfiles: 4
+  model:
+    cmd: python src/seq2seq/component/model.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e175e2c59413ff6a9db9d9f498c08cba.dir
+      size: 3514002
+      nfiles: 4
+    - path: src/seq2seq/component/model.py
+      hash: md5
+      md5: d69c84ea0d93d549b631fa5c21b1a7d3
+      size: 3785
+  model_training:
+    cmd: python src/seq2seq/component/s5_model_training.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e175e2c59413ff6a9db9d9f498c08cba.dir
+      size: 3514002
+      nfiles: 4
+    - path: src/seq2seq/component/model.py
+      hash: md5
+      md5: d69c84ea0d93d549b631fa5c21b1a7d3
+      size: 3785
+    - path: src/seq2seq/component/s5_model_training.py
+      hash: md5
+      md5: e597b44f2e1f5930b94d44062811ab88
+      size: 4755
+    outs:
+    - path: artifacts/model
+      hash: md5
+      md5: b7676417add7a143e341cbb5dbd345a2.dir
+      size: 124377740
+      nfiles: 1
+  model_evaluation:
+    cmd: python src/seq2seq/component/s6_model_evaluation.py
+    deps:
+    - path: artifacts/model
+      hash: md5
+      md5: b7676417add7a143e341cbb5dbd345a2.dir
+      size: 124377740
+      nfiles: 1
+    - path: src/seq2seq/component/s6_model_evaluation.py
+      hash: md5
+      md5: 8e8054145cad3bfd606e22348de3b26d
+      size: 7907
+    outs:
+    - path: artifacts/evaluation
+      hash: md5
+      md5: 73af00ed75b1fbd8903d34344f613c0d.dir
+      size: 46
+      nfiles: 1
