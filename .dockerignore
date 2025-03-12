@@ -1,0 +1,21 @@
+# Ignore version control and environment files
+.git/
+.gitignore
+env/
+venv/
+
+# Ignore build artifacts and logs
+artifacts/
+!artifacts/model/model.pth
+!artifacts/data_preprocessing/tokenizer
+logs/
+
+# Ignore Python packaging metadata
+# enc_dec.egg-info/
+__pycache__/
+checkpoint.pth
+checkpoint/
+
+# Ignore documentation and license files
+LICENSE
+README.md
