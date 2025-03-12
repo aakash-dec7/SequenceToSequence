@@ -1,0 +1,42 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source:
+    url: https://raw.githubusercontent.com/aakash-tsx/Datasets/refs/heads/main/eng_french.csv
+  download_path: artifacts/data_ingestion/data.csv
+
+data_validation:
+  data_path: artifacts/data_ingestion/data.csv
+
+data_preprocessing:
+  root_dir: artifacts/data_preprocessing
+  data_path: artifacts/data_ingestion/data.csv
+  tokenizer_path: artifacts/data_preprocessing
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  input_data_path: artifacts/data_preprocessing/input_data.csv
+  target_data_path: artifacts/data_preprocessing/target_data.csv
+
+model_training:
+  root_dir: artifacts/model
+  train_input_path: artifacts/data_transformation/train/input_data.csv
+  train_target_path: artifacts/data_transformation/train/target_data.csv
+
+model_evaluation:
+  root_dir: artifacts/evaluation
+  test_input_path: artifacts/data_transformation/test/input_data.csv
+  test_target_path: artifacts/data_transformation/test/target_data.csv
+  model_path: artifacts/model/model.pth
+  metrics_path: artifacts/evaluation
+
+experiment_tracking:
+  repo_name: SequenceToSequence
+  repo_owner: aakash-dec7
+  mlflow:
+    uri: https://dagshub.com/aakash-dec7/SequenceToSequence.mlflow
+
+prediction:
+  model_path: artifacts/model/model.pth
+  tokenizer_path: artifacts/data_preprocessing/tokenizer
