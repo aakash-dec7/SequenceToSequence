@@ -1,0 +1,3 @@
+columns:
+  input_column: English words/sentences
+  target_column: French words/sentences
