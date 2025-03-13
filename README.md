@@ -39,26 +39,26 @@ The Seq2Seq model consists of the following components:
 
 ### 1. Encoder
 
-- A multi-layer Long Short-Term Memory (LSTM) network processes input sequences and encodes them into hidden state representations.
-- An embedding layer converts tokenized words into dense vector representations.
-- The final hidden and cell states are passed to the decoder for further processing.
+- A multi-layer **Long Short-Term Memory (LSTM)** network processes input sequences and encodes them into `hidden state` representations.
+- An `embedding layer` converts tokenized words into dense vector representations.
+- The final `hidden states` and `cell states` are passed to the **decoder** for further processing.
 
 ### 2. Bahdanau Attention
 
-- The attention mechanism enables the decoder to focus on relevant parts of the encoder output while generating each word in the target language.
-- Computes attention scores using a combination of the decoder's hidden state (query) and encoder outputs (keys).
+- The **attention mechanism** enables the decoder to focus on relevant parts of the `encoder output` while generating each word in the target language.
+- Computes **attention scores** using a combination of the decoder's `hidden state` (query) and `encoder outputs` (keys).
 - Scores are normalized using softmax to obtain attention weights, which are used to compute a weighted sum of the encoder outputs (context vector).
 
 ### 3. Decoder
 
-- A multi-layer LSTM that takes the previous token and context vector as input at each time step.
-- The context vector from the attention mechanism assists in generating accurate translations by attending to relevant encoder states.
-- The output is passed through a fully connected layer to predict the next token in the sequence.
+- A multi-layer **LSTM** that takes the previous token and `context vector` as input at each time step.
+- The `context vector` from the **attention mechanism** assists in generating accurate translations by attending to relevant encoder states.
+- The output is passed through a **fully connected layer** to predict the next `token` in the sequence.
 
 ### 4. Seq2Seq Model
 
-- The complete model integrates the encoder and decoder modules.
-- During training, the decoder receives ground-truth tokens as input for teacher forcing.
+- The complete model integrates the **encoder** and **decoder** modules.
+- During **training**, the decoder receives ground-truth tokens as input for teacher forcing.
 - The model outputs a probability distribution over the target vocabulary at each time step.
 
 #### Model Summary
