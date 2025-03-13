@@ -131,7 +131,7 @@ The trained model will be saved in the project directory: `artifacts/model/model
 
 ### Create an ECR Repository
 
-Create an Amazon ECR repository with the same name as specified in `setup.py`:
+Ensure that the Amazon ECR repository exists with the appropriate name as specified in `setup.py`:
 
 ```python
 setup(
