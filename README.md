@@ -34,14 +34,14 @@ Ensure the following dependencies and services are installed and configured:
 **Source:** [Language Translation (English-French)](https://www.kaggle.com/datasets/devicharith/language-translation-englishfrench)
 
 **Description:**
-The dataset comprises two columns:
+The dataset consists of:
 
 - **English words/sentences**
 - **French words/sentences**
 
 ## Model Architecture
 
-The **Seq2Seq** model consists of the following components:
+The **Sequence-to-Sequence** model consists of the following components:
 
 ### 1. Encoder
 
@@ -125,7 +125,11 @@ dvc init
 dvc repro
 ```
 
-The trained model will be saved in the project directory: `artifacts/model/model.pth`
+The trained model will be saved in:
+
+```sh
+artifacts/model/model.pth
+```
 
 ## Deployment
 
@@ -177,7 +181,7 @@ git push origin main
 
 ### CI/CD Automation
 
-GitHub Actions will automate the CI/CD process, ensuring that the model is built, tested, and deployed on the EKS cluster.
+GitHub Actions will automate the CI/CD process, ensuring that the model is built, tested, and deployed to **Amazon EKS**.
 
 ## Accessing the Deployed Application
 
@@ -198,7 +202,7 @@ Copy the `EXTERNAL-IP` and append `:5000` to access the application:
 http://<EXTERNAL-IP>:5000
 ```
 
-The SequenceToSequence translation application is now deployed and accessible online.
+The Sequence-to-Sequence translation application is now deployed and accessible online.
 
 ## License
 
