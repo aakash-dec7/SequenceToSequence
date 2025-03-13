@@ -1,16 +1,16 @@
 # Sequence-to-Sequence Model with Bahdanau Attention
 
-This repository contains a Sequence-to-Sequence (Seq2Seq) model with Bahdanau Attention for English-to-French translation. The model is implemented using PyTorch and follows a modular structure for improved readability, maintainability, and scalability.
+This repository contains a **Sequence-to-Sequence** (Seq2Seq) model with **Bahdanau Attention** for English-to-French translation. The model is implemented using `PyTorch` and follows a modular structure for improved readability, maintainability, and scalability.
 
 ## Features
 
-- **PyTorch** implementation.
-- **Data Version Control (DVC)** for managing training and evaluation pipelines.
-- **Marian Tokenizer**: Utilizes the `Helsinki-NLP/opus-mt-en-fr` tokenizer for efficient text processing.
-- **MLflow and DagsHub** for experiment tracking and model management.
-- **Amazon Elastic Container Registry (ECR)** for storing Docker images.
-- **Amazon Elastic Kubernetes Service (EKS)** for deploying the model as a containerized application.
-- **Complete CI/CD Implementation** using AWS and GitHub Actions for automated deployment.
+**PyTorch Implementation**: Fully built using `PyTorch` for efficient deep learning workflows.
+**Data Version Control (DVC)**: Manages training and evaluation pipelines effectively.
+**Marian Tokenizer**: Uses `Helsinki-NLP/opus-mt-en-fr` for robust and efficient text processing.
+**Experiment Tracking & Model Management**: Integrated with `MLflow` and `DagsHub` for seamless tracking.
+**Containerized Deployment**: Docker images stored in `Amazon Elastic Container Registry (ECR)`.
+**Scalable Deployment**: Model deployed on `Amazon Elastic Kubernetes Service (EKS)` for production readiness.
+**Automated CI/CD**: End-to-end deployment automation using AWS and GitHub Actions.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ Ensure the following dependencies and services are installed and configured:
 - AWS CLI
 - Docker Desktop (for local image testing)
 - DagsHub Account (for experiment tracking)
-- Git
+- Git & GitHub (for version control)
 
 ## Dataset
 
@@ -192,4 +192,4 @@ Copy the `EXTERNAL-IP` and append `:5000` to access the application:
 http://<EXTERNAL-IP>:5000
 ```
 
-Your English-to-French translation application is now deployed and accessible online.
+The English-to-French translation application is now deployed and accessible online.
