@@ -35,7 +35,7 @@ The dataset comprises two columns:
 
 ## Model Architecture
 
-The Seq2Seq model consists of the following components:
+The **Seq2Seq** model consists of the following components:
 
 ### 1. Encoder
 
