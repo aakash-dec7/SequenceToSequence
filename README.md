@@ -5,11 +5,17 @@ This repository contains a **Sequence-to-Sequence** (Seq2Seq) model with **Bahda
 ## Features
 
 **PyTorch Implementation**: Fully built using `PyTorch` for efficient deep learning workflows.
+
 **Data Version Control (DVC)**: Manages training and evaluation pipelines effectively.
+
 **Marian Tokenizer**: Uses `Helsinki-NLP/opus-mt-en-fr` for robust and efficient text processing.
+
 **Experiment Tracking & Model Management**: Integrated with `MLflow` and `DagsHub` for seamless tracking.
+
 **Containerized Deployment**: Docker images stored in `Amazon Elastic Container Registry (ECR)`.
+
 **Scalable Deployment**: Model deployed on `Amazon Elastic Kubernetes Service (EKS)` for production readiness.
+
 **Automated CI/CD**: End-to-end deployment automation using AWS and GitHub Actions.
 
 ## Prerequisites
@@ -192,4 +198,8 @@ Copy the `EXTERNAL-IP` and append `:5000` to access the application:
 http://<EXTERNAL-IP>:5000
 ```
 
-The English-to-French translation application is now deployed and accessible online.
+The SequenceToSequence translation application is now deployed and accessible online.
+
+## License
+
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
